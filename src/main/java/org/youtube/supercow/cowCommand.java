@@ -1,0 +1,77 @@
+package org.youtube.supercow;
+
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.CommandSender;
+import org.bukkit.command.TabExecutor;
+import org.bukkit.entity.Cow;
+import org.bukkit.entity.Player;
+import org.bukkit.metadata.FixedMetadataValue;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class cowCommand implements CommandExecutor, TabExecutor {
+    @Override
+    public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
+
+        if (!(sender instanceof Player)) {
+            sender.sendMessage("Only player can use the command");
+
+            return true;
+        }
+
+        boolean isBaby = false;
+
+        Player player = (Player) sender;
+        Cow cow = player.getWorld().spawn(player.getLocation(), Cow.class);
+
+        if (args.length == 1 && args[0].equalsIgnoreCase("baby"))
+            cow.setBaby();
+
+        cow.setMetadata("SuperCow", new FixedMetadataValue(SuperCow.getInstance(), true));
+        cow.setCustomName("milk me");
+        cow.setCustomNameVisible(true);
+
+        return true;
+    }
+
+    @Override
+    public @Nullable List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
+
+        if (args.length == 1)
+            return Arrays.asList("baby");
+
+        return new ArrayList<>();
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

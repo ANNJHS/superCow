@@ -1,1 +1,1 @@
-# superCow
+This is a first Plugin

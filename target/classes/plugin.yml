@@ -1,0 +1,11 @@
+name: superCow
+version: '1.0-SNAPSHOT'
+main: org.youtube.supercow.SuperCow
+api-version: '1.20'
+commands:
+  cow:
+    description: "Spawn Exploding cow"
+    usage: "/cow [baby]"
+    aliases: [supercow]
+    permission: supercow.command.cow
+    permission-message: "you do not have permission"
