@@ -1,5 +1,6 @@
 package org.youtube.supercow;
 
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -32,7 +33,7 @@ public class cowCommand implements CommandExecutor, TabExecutor {
             cow.setBaby();
 
         cow.setMetadata("SuperCow", new FixedMetadataValue(SuperCow.getInstance(), true));
-        cow.setCustomName("&cmilk me");
+        cow.setCustomName(ChatColor.RED+"mike me");
         cow.setCustomNameVisible(true);
 
         return true;
