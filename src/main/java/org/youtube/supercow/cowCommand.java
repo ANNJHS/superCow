@@ -20,7 +20,6 @@ public class cowCommand implements CommandExecutor, TabExecutor {
 
         if (!(sender instanceof Player)) {
             sender.sendMessage("Only player can use the command");
-
             return true;
         }
 
