@@ -32,7 +32,7 @@ public class cowCommand implements CommandExecutor, TabExecutor {
             cow.setBaby();
 
         cow.setMetadata("SuperCow", new FixedMetadataValue(SuperCow.getInstance(), true));
-        cow.setCustomName("milk me");
+        cow.setCustomName("&cmilk me");
         cow.setCustomNameVisible(true);
 
         return true;
